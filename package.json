@@ -1,0 +1,34 @@
+{
+  "name": "wasm-demo",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build:native": "napi build --platform",
+    "build:wasm": "napi build --platform --target wasm32-wasip1-threads"
+  },
+  "dependencies": {
+    "@napi-rs/cli": "3.0.0-alpha.93",
+    "@napi-rs/wasm-runtime": "^0.2.9",
+    "emnapi": "^1.4.3",
+    "typescript": "^5.8.3"
+  },
+  "napi": {
+    "binaryName": "wasm-demo",
+    "packageName": "wasm-demo",
+    "targets": [
+      "x86_64-apple-darwin",
+      "wasm32-wasip1-threads"
+    ],
+    "wasm": {
+      "initialMemory": 16384,
+      "browser": {
+        "fs": true
+      }
+    }
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "packageManager": "pnpm@10.11.0"
+}
